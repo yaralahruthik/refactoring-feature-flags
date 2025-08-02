@@ -1,3 +1,5 @@
+import FeatureOne from '@/components/feature-one';
+import FeatureTwo from '@/components/FeatureTwo';
 import { Box, Button, Paper, Typography } from '@mui/material';
 import { Link } from 'react-router';
 
@@ -10,6 +12,15 @@ export default function About() {
       <Typography variant="body1" paragraph>
         This is a simple about page using Material UI v5 components.
       </Typography>
+
+      <Box mt={2}>
+        <FeatureOne />
+      </Box>
+
+      <Box mt={2}>
+        <FeatureTwo />
+      </Box>
+
       <Box mt={2}>
         <Button component={Link} to="/">
           Go to Home Page

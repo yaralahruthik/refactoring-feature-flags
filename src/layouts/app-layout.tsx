@@ -6,8 +6,10 @@ export default function AppLayout() {
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            My Dummy App
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+            <Link style={{ color: 'inherit', textDecoration: 'none' }} to="/">
+              My Dummy App
+            </Link>
           </Typography>
           <Button component={Link} to="/login" color="inherit">
             Login
