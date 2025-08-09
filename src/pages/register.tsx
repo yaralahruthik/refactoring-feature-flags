@@ -23,7 +23,7 @@ export default function Register() {
         </Button>
         <Box mt={2} textAlign="center">
           <Typography variant="body2">
-            Already have an account? <Link to="/auth/login">Login</Link>
+            Already have an account? <Link to="/login">Login</Link>
           </Typography>
         </Box>
       </Box>
