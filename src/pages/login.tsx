@@ -22,7 +22,7 @@ export default function Login() {
         </Button>
         <Box mt={2} textAlign="center">
           <Typography variant="body2">
-            Don't have an account? <Link to="/auth/register">Register</Link>
+            Don't have an account? <Link to="/register">Register</Link>
           </Typography>
         </Box>
       </Box>
