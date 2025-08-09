@@ -1,10 +1,20 @@
+import { fetchProfile, type ProfileType } from '@/api/profile';
+import FeatureFlag from '@/components/feature-flag';
 import FeatureOne from '@/components/feature-one';
 import FeatureThree from '@/components/feature-three';
 import FeatureTwo from '@/components/FeatureTwo';
 import { Box, Button, Paper, Typography } from '@mui/material';
+import React from 'react';
 import { Link } from 'react-router';
-
 export default function Home() {
+  const [profile, setProfile] = React.useState<ProfileType | null>(null);
+
+  React.useEffect(() => {
+    fetchProfile().then((data) => {
+      setProfile(data);
+    });
+  }, []);
+
   return (
     <Paper elevation={3} sx={{ p: 4 }}>
       <Typography variant="h4" gutterBottom>
@@ -22,9 +32,11 @@ export default function Home() {
         <FeatureTwo />
       </Box>
 
-      <Box mt={2}>
-        <FeatureThree />
-      </Box>
+      <FeatureFlag enableCondition={profile?.id === '12345'}>
+        <Box mt={2}>
+          <FeatureThree />
+        </Box>
+      </FeatureFlag>
 
       <Box mt={2}>
         <Button component={Link} to="/about">
