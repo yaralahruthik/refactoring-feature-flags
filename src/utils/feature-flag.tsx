@@ -48,13 +48,14 @@ export default function FeatureFlag({
   enableCondition,
   featureName,
   children,
+  fallback,
   persistTo,
-}: FeatureFlag & { children?: React.ReactNode }) {
+}: FeatureFlag & { children?: React.ReactNode; fallback?: React.ReactNode }) {
   const isEnabled = useFeatureFlag({ enableCondition, featureName, persistTo });
 
   if (isEnabled) {
     return <>{children || null}</>;
   }
 
-  return null;
+  return fallback || null;
 }
