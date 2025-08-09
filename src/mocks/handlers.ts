@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw';
 
 const FAKE_PROFILE = {
-  id: '12345',
+  id: '1234',
   firstName: 'John',
   lastName: 'Doe',
   age: 30,

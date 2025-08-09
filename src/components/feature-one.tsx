@@ -1,3 +1,4 @@
+import DevelopmentFlag from '@/utils/development-flag';
 import { Paper } from '@mantine/core';
 import BuildIcon from '@mui/icons-material/Build';
 import DescriptionIcon from '@mui/icons-material/Description';
@@ -10,7 +11,6 @@ import {
   Paper as MUIPaper,
   Typography,
 } from '@mui/material';
-import DevelopmentFlag from './development-flag';
 
 export default function FeatureOne() {
   return (

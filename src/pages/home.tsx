@@ -1,11 +1,12 @@
 import { fetchProfile, type ProfileType } from '@/api/profile';
-import FeatureFlag from '@/components/feature-flag';
 import FeatureOne from '@/components/feature-one';
 import FeatureThree from '@/components/feature-three';
 import FeatureTwo from '@/components/FeatureTwo';
+import FeatureFlag from '@/utils/feature-flag';
 import { Box, Button, Paper, Typography } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router';
+
 export default function Home() {
   const [profile, setProfile] = React.useState<ProfileType | null>(null);
 
@@ -32,7 +33,11 @@ export default function Home() {
         <FeatureTwo />
       </Box>
 
-      <FeatureFlag enableCondition={profile?.id === '12345'}>
+      <FeatureFlag
+        enableCondition={profile?.id === '12345'}
+        featureName="feature-three"
+        persistTo="sessionStorage"
+      >
         <Box mt={2}>
           <FeatureThree />
         </Box>
