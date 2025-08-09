@@ -1,4 +1,5 @@
 import FeatureOne from '@/components/feature-one';
+import FeatureThree from '@/components/feature-three';
 import FeatureTwo from '@/components/FeatureTwo';
 import { Box, Button, Paper, Typography } from '@mui/material';
 import { Link } from 'react-router';
@@ -19,6 +20,10 @@ export default function Home() {
 
       <Box mt={2}>
         <FeatureTwo />
+      </Box>
+
+      <Box mt={2}>
+        <FeatureThree />
       </Box>
 
       <Box mt={2}>
